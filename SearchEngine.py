@@ -7,7 +7,7 @@ from nltk.tokenize import RegexpTokenizer
 import pandas as pd
     
 #trie class for node
-class TrieNode: 
+class TreeNode: 
       
      
     def __init__(self): 
@@ -16,8 +16,8 @@ class TrieNode:
         
         self.isEndOfWord = False
   
-#Trie data structure class
-class Trie: 
+#Tree data structure class
+class Tree: 
       
     
     def __init__(self): 
@@ -26,7 +26,7 @@ class Trie:
     def getNode(self): 
       
         
-        return TrieNode() 
+        return TreeNode() 
   
     def _charToIndex(self,ch): 
           
@@ -55,7 +55,7 @@ class Trie:
   
     def search(self, key): 
           
-        # search in trie and return true if found else false
+        # search in tree and return true if found else false
         pCrawl = self.root 
         length = len(key) 
         for level in range(length): 
@@ -107,7 +107,7 @@ while menu:
             database.append({'url': link, 'words_list': filtered_list})
     
 
-        t = Trie() 
+        t = Tree() 
   
 
         for data in database:
